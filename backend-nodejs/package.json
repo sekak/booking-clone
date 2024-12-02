@@ -5,9 +5,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js",
-    "build": "echo 'no build required'"
-  },
+    "start": "nodemon index.js"
+   },
   "keywords": [],
   "author": "",
   "license": "ISC",
