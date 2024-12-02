@@ -18,7 +18,7 @@ const Login = () => {
     dispatch({ type: "LOGIN_START" });
     try {
       const res = await axios.post(
-        "https://booking-project-seven.vercel.app/api/auth/login",
+        "https://booking-clone-3.onrender.com/api/auth/login",
         credentials,
         {withCredentials: true}
       );

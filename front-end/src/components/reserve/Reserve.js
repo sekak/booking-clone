@@ -66,7 +66,7 @@ const Reserve = ({ setOpenModal, id }) => {
     setOpenModal(false);
     try {
       for (const _id of reserveRoom) {
-        await axios.put(`https://booking-project-seven.vercel.app/api/room/availablity/${_id}`, {
+        await axios.put(`https://booking-clone-3.onrender.com/api/room/availablity/${_id}`, {
           unavailableDates: getDatesInRange(),
         });
       }
