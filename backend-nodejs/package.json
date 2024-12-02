@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run build",
+    "build": "echo 'Hello World'",
     "start": "nodemon index.js"
   },
   "keywords": [],
