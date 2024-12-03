@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: ['https://booking-clone-cmve.vercel.app/', 'http://localhost:3000'],
+    origin: ['https://booking-clone-3.onrender.com', 'http://localhost:3000'],
     credentials: true,
   })
 );
