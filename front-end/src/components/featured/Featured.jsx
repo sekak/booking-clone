@@ -15,11 +15,9 @@ const Featured = () => {
       setDelay(true);
     }, 1000);
   }, []);
-  console.log("to fetch data")
   const { data, loading, error } = FetchData(
     "/hotel/countByCity?city=Marrakech,Fès,Essaouira,Chefchaouene,Rabat"
   );
-  console.log(data)
   const handleClick = (destination) => {
     consumer.dispatch({type:'NEW_SEARCH',payload:{city: destination,
       dates: [

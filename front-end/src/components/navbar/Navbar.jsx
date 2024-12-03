@@ -1,13 +1,12 @@
-import { Link, json } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./navbar.css";
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../../Context/authContext";
 import axios from "axios";
 import {
   ref,
   uploadBytes,
   getDownloadURL,
-  deleteObject,
 } from "firebase/storage";
 import { storage } from "../../firebase/firebase";
 import { MdOutlineAddCircleOutline } from "react-icons/md";
@@ -26,15 +25,14 @@ const Navbar = () => {
   const token = JSON.parse(localStorage.getItem("token"));
   let user = JSON.parse(localStorage.getItem("user"));
 
-  const { data } = FetchData(`/users/${user?._id}`);
   const [image, setImage] = useState("");
+  const { data } = FetchData(`/users/${user._id}`);
   
   const SaveImage = async (e) => {
     const img = e.target.files[0].name;
     const file = e.target.files[0];
     const storageRef = ref(storage, img);
 
-    console.log("storageRef",storageRef)
     try {
       await uploadBytes(storageRef, file)  
       await getDownloadURL(storageRef)
@@ -47,7 +45,6 @@ const Navbar = () => {
           { headers: { Authorization: `Bearer ${token}` } }
           );
           setImage(url)
-          console.log("url",url)
         })
         .catch((err) => console.log(err));
         console.log("save image to firebase!");

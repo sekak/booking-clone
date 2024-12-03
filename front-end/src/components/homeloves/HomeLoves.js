@@ -5,7 +5,6 @@ import Header from "../header/Header";
 import Navbar from "../navbar/Navbar";
 import "./homeLoves.css";
 import Error from "../../error/Error";
-import { useEffect, useState } from "react";
 
 const HomeLoves = () => {
   const location = useLocation();
@@ -13,7 +12,6 @@ const HomeLoves = () => {
   if(!location.search.slice(1))
     type = undefined
   const { data, loading, error } = FetchData(`/hotel/find?${type ? "type=" + type : ""}`);
-  const [statusRating, setStatusRating] = useState("");
 
     const CheckStatusRating = (item) => {
       if (item < 10 && item > 9)

@@ -25,7 +25,6 @@ const Login = () => {
       dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
       const path = localStorage.getItem("path")
       navigate(path || "/");
-      console.log(res.data)
       
       localStorage.setItem('user',JSON.stringify(res.data))
       localStorage.setItem('token',JSON.stringify(res.data.token))
@@ -33,7 +32,6 @@ const Login = () => {
       dispatch({ type: "LOGIN_FAILURE", payload: err.response.data });
     }
   };
-  console.log(credentials);
   return (
     <div className="login">
       <div className="loginWrapper">

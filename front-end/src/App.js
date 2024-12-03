@@ -16,7 +16,6 @@ import HomeLoves from "./components/homeloves/HomeLoves";
 
 function App() {
   const {state} = useContext(AuthContext)
-  console.log("app",state.user)
   return (
     <BrowserRouter>
       <Routes>
