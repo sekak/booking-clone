@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: 'https://front-end-zeta-eosin.vercel.app/',
+    origin: 'https://booking-clone-cmve.vercel.app/',
     credentials: true,
   })
 );
